@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Heading">
+        <h1>Home Page</h1>
+        <p>Welcome home, <%= username %>
+        </p>
+        <button><a href="/posts" , style="text-decoration: none; color: inherit;">Post</a></button>
+
+    </div>
+
+
+    <div class="post-section">
+
+        <% for(let post of posts) { %>
+            <div class="post-card">
+                <div class="content-section">
+                    <h3>
+                        <%= post.name %>
+                    </h3>
+                    <p><strong>Caption:</strong>
+                        <%= post.caption %>
+                    </p>
+                    <p><strong>Location:</strong>
+                        <%= post.location %>
+                    </p>
+                    <p><strong>Likes:</strong>
+                        <%= post.likes %>
+                    </p>
+                </div>
+                <div class="card-butt">
+                    <form method="POST" action="/posts/<%= post.id %>/like">
+                        <button type="submit">❤️ Like</button>
+                    </form>
+                    <form method="POST" action="/posts/<%= post.id%>/comment">
+                        <button type="submit">💬 Comment</button>
+                    </form>
+                    <button><a href="/posts/<%= post.id%>/edit"
+                            style="text-decoration: none; color: inherit;">Update</a></button>
+                    <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                        <button>Delete</button>
+                    </form>
+                </div>
+
+            </div>
+            <% } %>
+
+
+    </div>
+
+
+</body>
+
+</html>

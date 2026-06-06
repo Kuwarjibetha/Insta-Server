@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+<body>
+    <form action="/home" method="post">
+        <div>
+            <textarea name="caption" placeholder="Caption"></textarea>
+            <br>
+            <input type="text" name="location" placeholder="Location">
+            <button>Upload</button>
+        </div>
+    </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new post</title>
+</head>
+
+<body>
+    <h4>Create New Post</h4>
+    <form action="/posts" method="post"> 
+        <!-- <input placeholder="Id" name="id" type="text"> -->
+        <input placeholder="Username" name="name" type="text">
+        <br>
+        <textarea placeholder="Write your post" name="caption"></textarea><br>
+        <input placeholder="Location" name="location" type="text"><br>
+        <button>Create Post</button> 
+    </form>
+</body>
+
+</html>
